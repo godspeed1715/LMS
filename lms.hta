@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="lms">
+
+<head>
+    <title>Learning Management System</title>
+    <meta http-equiv="x-ua-compatible" content="ie=9">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./app/lib/css/bootstrap.css" media="screen" />
+    <link rel="stylesheet" href="./app/lib/css/bootswatch.min.css" />
+    <link rel="stylesheet" href="./app/lib/css/daterangepicker-bs3.css" media="all" />
+    <link rel="stylesheet" href="./app/lib/css/select2.css" />
+    <link rel="stylesheet" href="./app/lib/css/lms.css" />
+    <link rel="stylesheet" href="./app/lib/css/font-awesome.css" />
+</head>
+
+<body>
+    <!--Splash Screen-->
+    <div class="splash-container">
+        <div class="splash-h">
+            <div class="splash-logo">.|.</div>
+        </div>
+    </div>
+    <!-- /splash-container -->
+    <div class="lms-App hide" ng-controller="lmsCtrl">
+       <nav class="menu" id="lms-Menu-Container">
+            <div class="menu-wrap">
+                <div class="menuClose"><i class="fa fa-bars"></i>
+                </div>
+                <h1 class="logo">LMS</h1>
+            </div>
+            <!-- menu-wrap -->
+            <div class="menuToggle menuIcon menu-tooltip"  data-toggle="tooltip" data-placement="left" title="Sidebar"><i class="fa fa-bars"></i>
+            </div>
+        </nav>
+        <!--/menu-->
+
+         <div id="lms-Main-Container" class="main-container">
+            <div class="header"> 
+                <h3>Overview</h3>
+                    <div class="header-search">
+                         <input type="text" class="searchInput form-control input-sm" ng-model="searchFilter" />
+                        <div class="btn-settings form-control">
+                            <i class="fa fa-search"></i>
+                        </div>
+                    </div>
+                <span class="header-menu">
+                    <i class="fa fa-gear fa-lg"></i>
+                    <i class="fa fa-question-circle fa-lg"></i>
+                    <i class="fa fa-sign-out fa-lg"></i></span>
+                </span>
+            </div>
+            <div>
+                <div class="card-container row col-md-3" ng-repeat="learner in filtered = (learners | filter:searchFilter)">
+                    <profile-Summary profile-Data='{{learner}}'></profile-Summary>
+                </div>
+                <div ng-show="filtered.length === 0 && learners.length !== 0">
+                    <h4 ng-show="searchFilter">No Search results for "{{searchFilter}}". <span ng-click="searchFilter = ''" class="btn btn-default btn-xs "> Clear Search</span></h4>
+                </div>
+            </div>
+        </div>
+    <!--/lms-App-->
+    <script src="./app/lib/js/jquery-1.10.2.min.js"></script>
+    <script src="./app/lib/js/angular.js"></script>
+    <script src="./app/lib/js/d3.js"></script>
+    <script src="./app/lib/js/bootstrap.min.js"></script>
+    <script src="./app/lib/js/select2.js"></script>
+    <script src="./app/lib/js/daterangepicker.js"></script>
+    <script src="./app/lib/js/moment.js"></script>
+    <script src="./app/lib/js/md5.js"></script>
+    <script src="./app/lib/js/lmsApp.js"></script>
+    <script src="./app/lib/js/lmsControllers.js"></script>
+    <script src="./app/lib/js/lmsServices.js"></script>
+    <script src="./app/lib/js/lmsDirectives.js"></script>
+    <script src="./app/lib/js/lmsFilters.js"></script>
+</body>
+</html>

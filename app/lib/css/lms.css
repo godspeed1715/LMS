@@ -1,0 +1,654 @@
+        ::-webkit-scrollbar {
+            width: 12px;
+            height:12px;
+            background-color: #F5F5F5;
+        }
+
+        ::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+            background-color: #F5F5F5;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            border-radius: 2px;
+            background-color: rgba(0, 0, 0, 0.25);
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            border-radius: 2px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        /*Main styles*/
+        body {
+            overflow-y:scroll;
+            height: 100%;
+            background: #008cba;
+        }
+        .dropdown-header {
+            border-bottom: 1px solid #eee;
+        }
+        #CabinLabel {
+            font-family:'Cabin', sans-serif;
+        }
+        #OpenSansLabel {
+            font-family: 'Open Sans', sans-serif;
+        }
+        #SourceSansProLabel {
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+        /*Headings*/
+        .header {
+            width: 100%;
+            height: 50px;
+        }
+        .header h3 {
+            margin-top: 25px;
+            margin-bottom: -5px;
+        }
+        .header h4 {
+            margin-top: 20px;
+            margin-bottom: -2px;
+        }
+        .header .btn {
+            margin-left:10px;
+            margin-top:-16px;
+            margin-bottom: -14px;
+            padding-top:-10px;
+        }
+        .header .header-search {
+            position: fixed;
+            z-index: 10;
+            right: 165px;
+            top: 21px;
+            width: 200px;
+            -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+            background-clip: padding-box;
+        }
+        .header .header-search .input-sm {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 200px;
+            height:40px;
+            border-right: 0px;
+            box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.075);
+        } 
+        .header .header-search .input-sm:focus, .header .header-search .input-sm:active {
+            border: 1px solid #cccccc;
+            border-right:none;
+            outline: none;
+            border-top-left-radius: 2px;
+            border-bottom-left-radius: 2px;
+        }
+        .header .header-search .btn-settings {
+            position: absolute;
+            top: 0px;
+            left: 200px;
+            height:40px;
+            width: 27px;
+            background: #fff;
+            border-left: 0px;
+            box-shadow: inset -1px 1px 0px rgba(0, 0, 0, 0.075);
+            cursor: pointer;
+        }
+        .header .header-search .btn-settings i {
+            margin-top: 6px;
+            padding-right:10px;
+        }
+        .header .input-group-btn {
+            top: 1px;
+        }
+        .header .header-menu {
+            position: fixed;
+            z-index: 10;
+            right: 10px;
+            top: 28px;
+        }
+        .header .header-menu i {
+            color: #8894A3;
+            margin: 6px;
+            cursor: pointer;
+        }
+        .header .header-menu i:hover {
+            color:#444;
+        }
+        /*Container*/
+        .main-container {
+            position: absolute;
+            top: 0px;
+            left: 90px;
+            right: 0px;
+            padding-bottom:15px;
+            min-width: 600px;
+        }
+        .card-container, .row {
+            cursor: pointer;
+            padding: .8em 1em .3em .90em;/* cosy padding: .45em 1.5em .45em 1.3em;Comfortable padding: .6em 2em .6em 1.8em;*/
+            color: #444;
+            margin: 10px 10px 10px 10px;
+            background: #fefefe;
+            border-left: 1px solid #f5f5f5;
+            border-top: 1px solid #f4f4f4;
+            border-right: 1px solid #fafafb;
+            border-bottom: 1px solid #e8e8e8;
+            border-radius: 3px;
+            box-shadow: 0 2px 3px rgba(0,0,0,.05);
+            
+        }
+        .card-container:hover {
+            color: #000;
+            background: #f8f8f8;/* Nice Yellow, Maybe keep background: #fefeee;*/
+            border-left: 1px solid #f8f8f8;
+            border-top: 1px solid #f4f4f4;
+            border-right: 1px solid #f8f8f8;
+            border-bottom: 1px solid #e8e8e8;
+        }
+        .quickview {
+            cursor: pointer;
+        }
+        .Controls i:hover {
+            color:#444;
+        }
+        .quickControls {
+            margin-left:30px;
+        }
+        .quickControls>.Controls {
+            color: #ccc;
+            display: block;
+            float: right;
+            right: 1px;
+            height: 2em;
+            line-height: 2em;
+            font-size: .813em;
+            font-weight: 500;
+            margin-left: 4px;
+            margin-right: 4px;
+        }
+        .quickControls a {
+            text-decoration: none;
+            color: #ccc;
+        }
+        /* Splash Screen */
+        .splash-h {
+            cursor:default;
+        }
+        .splash-logo {
+            width: 100%;
+            text-align:center;
+            font-size: 3.5em;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            line-height: 40px;
+            text-transform: uppercase;
+            color: #fff;
+            position: absolute;
+            top: 48%;
+        }
+        .splash-tag {
+            position: fixed;
+            top: 40%;
+            margin-top:45px;
+            margin-left: 3.5px;
+            font-size: 2.5em;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            line-height: 40px;
+            text-transform: uppercase;
+            color: #fff;
+        }
+        .splash-loader {
+            position: absolute;
+            top: 40%;
+            margin-top:110px;
+            margin-left: 48px;
+        }
+/*Trim this down*/
+        /* Side Menu */
+        .logo {
+            cursor: pointer;
+        }
+        .menu {
+            position: fixed;
+            left: -240px;
+            width: 300px;
+            height: 100%;
+            top: 0;
+            z-index: 10;
+            text-align: left;
+        }
+        .menuControls {
+            position: fixed;
+            left: 10px;
+            width: 60px;
+            height: 100%;
+            top: 0;
+            z-index: 10;
+            text-align: left;
+        }
+        .menu.menu-open {
+            left: 0px;
+        }
+        .push-main-container {
+            left: 270px;
+        }
+        .menu-wrap {
+            border-left: 2px solid rgba(0, 0, 0, 0.175);
+            position: absolute;
+            top: 0;
+            left: 0px;
+            background: rgb(35, 35, 35);
+            width: 240px;
+            height: 100%;
+            box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.175);
+            background-clip: padding-box;
+        }
+        .menu h1.logo {
+            margin-left: 60px;
+            font-size: 30px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            line-height: 40px;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-top: 20px;
+        }
+        .menu img.logo {
+            margin: 20px 0;
+            max-width: 160px;
+        }
+        .menu a, 
+        .menu .category {
+            text-decoration: none;
+            margin-left: 20px;
+            color: #fff;
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 40px;
+            letter-spacing: 0.1em;
+            margin-bottom: 10px;
+        }
+        .menu a:hover {
+            color: #ffffff;
+            background:  rgba(0, 163, 224,0.8);
+            margin-left: 0px;
+            padding-left: 20px;
+        }
+        .menu a:active {
+            color: #ffffff;
+        }
+       
+        .menu-close {
+            cursor: pointer;
+            display: block;
+            position: absolute;
+            font-size: 14px;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            top: -5px;
+            right: 0px;
+            -webkit-transition: all .1s ease-in-out;
+            -moz-transition: all .1s ease-in-out;
+            -ms-transition: all .1s ease-in-out;
+            -o-transition: all .1s ease-in-out;
+            transition: all .1s ease-in-out;
+        }
+        .menu-close:hover {
+            color: #ffffff;
+            -webkit-transition: all .1s ease-in-out;
+            -moz-transition: all .1s ease-in-out;
+            -ms-transition: all .1s ease-in-out;
+            -o-transition: all .1s ease-in-out;
+            transition: all .1s ease-in-out;
+        }
+        .menuClose {
+            position: absolute;
+            top: 20px;
+            left:10px;
+            z-index: 11;
+            display: block;
+            text-align: center;
+            font-size: 14px;
+            color: #ffffff;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            cursor: pointer;
+            border-radius: 2px;
+        }
+        .menuClose:hover {
+            color: #fff;
+            background: #008cba;
+        }
+        .menuToggle {
+            position: absolute;
+            top: 20px;
+            left: 252px;
+            z-index: 11;
+            display: block;
+            text-align: center;
+            font-size: 14px;
+            color: #ffffff;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            cursor: pointer;
+            background: rgba(0, 163, 224,0.8);
+            -webkit-transition: all .1s ease-in-out;
+            -moz-transition: all .1s ease-in-out;
+            -ms-transition: all .1s ease-in-out;
+            -o-transition: all .1s ease-in-out;
+            transition: all .1s ease-in-out;
+            -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+            background-clip: padding-box;
+            border-radius: 2px;
+        }
+
+        .settings-dropdown {
+            position: absolute;
+            top: 120px;
+            left: -212px;
+            min-height: 0px;
+            margin:0px;
+            padding:0px;
+        }
+        .settings-dropdown-open-menu {
+            position: absolute;
+            top: 0px;
+            left: -216px;
+            min-height: 0px;
+            margin:0px;
+            padding:0px;
+        }
+        .settings-dropdown li,
+        .settings-dropdown-open-menu li {
+             margin-left:-15px;
+             margin-top:-1px;
+             margin-bottom: -10px;
+        }
+        .settings-dropdown li:first-child,
+        .settings-dropdown-open-menu li:first-child {
+             margin-left:-15px;
+             margin-top:0px;
+             margin-bottom: 0px;
+        }
+        .settings-dropdown>li:hover,
+        .settings-dropdown-open-menu>li:hover {
+            margin-left:0px;
+            padding-left: 0px;
+        }
+        .settings-dropdown i,
+        .settings-dropdown-open-menu i {
+            line-height: 1em;
+        }
+        .settingsControls {
+            position: fixed;
+            left: 10px;
+            width: 260px;
+            height: 100%;
+            top: 0;
+            z-index: 10;
+            text-align: left;
+        }
+        .settingsToggle {
+             background: rgba(0, 163, 224,0.8);
+            position: absolute;
+            top: 20px;
+            left: 10px;
+            z-index: 11;
+            display: block;
+            text-align: center;
+            font-size: 14px;
+            color: #ffffff;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            cursor: pointer;
+            -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+            background-clip: padding-box;
+            border-radius: 2px;
+        }
+        .informationToggle {
+             background: rgba(0, 163, 224,0.8);
+            position: absolute;
+            top: 20px;
+            left: 10px;
+            z-index: 11;
+            display: block;
+            text-align: center;
+            font-size: 14px;
+            color: #ffffff;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            cursor: pointer;
+            -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+            background-clip: padding-box;
+            border-radius: 2px;
+        }
+        .menuIcon:hover {
+            color: #eee;
+            background: rgba(26, 26, 26, .8);
+            -webkit-transition: all .1s ease-in-out;
+            -moz-transition: all .1s ease-in-out;
+            -ms-transition: all .1s ease-in-out;
+            -o-transition: all .1s ease-in-out;
+            transition: all .1s ease-in-out;
+        }
+        .tag-legend {
+            text-decoration: none;
+            margin-left: 20px;
+            margin-right: 40px;
+            color: #fff;
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 40px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .menuTags {
+            text-decoration: none;
+            margin-left: 20px;
+            color: #fff;
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 30px;
+            letter-spacing: 0.1em;
+            text-transform: lowercase;
+            margin-bottom: 10px;
+        }
+        .profile-dropdown-open-menu {
+            position: absolute;
+            top: 40px;
+            left: 0px;
+            width:238px;
+            min-height: 0px;
+            margin:0px;
+            padding:0px;
+        }
+        .profile-dropdown-open-menu li {
+             margin-left:-15px;
+             margin-top:-1px;
+             margin-bottom: -10px;
+        }
+        .profile-dropdown-open-menu li:first-child {
+             margin-left:-15px;
+             margin-top:0px;
+             margin-bottom: 0px;
+        }
+        .profile-dropdown-open-menu>li:hover {
+            margin-left:0px;
+            padding-left: 0px;
+        }
+        .profile-dropdown-open-menu i {
+            line-height: 1em;
+        }
+        .subscriptionsAllItems > a {
+            color: #fff;
+        }
+        .subscribedFeedsHeader {
+            color:#fff;
+            text-decoration: none;
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 20px;
+            letter-spacing: 0.1em;
+            margin-left: -20px;
+            padding-left:20px;
+        }
+        .subscribedFeedsHeader .fa-gear {
+            border-radius: 2px;
+            margin-left: 55px;
+            padding:10px;
+        } 
+         .subscribedFeedsHeader .fa-gear:hover {
+            background: rgba(0, 163, 224,0.8);
+           cursor: pointer;
+        } 
+        .subscribedFeeds {
+            padding: 15px 0 15px 0px;
+            text-decoration: none;
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 20px;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+            margin-right: 1px;
+            height: auto;
+            overflow-y:auto;
+            overflow-x: hidden;
+        }
+        .subscribedFeeds a {
+            white-space: nowrap;
+            text-decoration: none;
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 20px;
+            padding: 3px 3px 3px 0;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+            margin-right: 5px;
+            overflow-y:auto;
+            overflow-x: hidden;
+        }
+        .subscribedFeeds span a {
+            margin-left: 0px;
+        }
+        .subscribedFeeds span a:hover {
+            color: #ffffff;
+            background:  #008cba;
+            margin-left: -20px;
+            padding-left: -20px;
+        }
+        .subscribedFeeds .active {
+            color: #ffffff;
+            background: rgba(0, 163, 224,0.8);
+            margin-left: 0px;
+            padding-left: 20px;
+        }
+        .subscribedFeeds span .active {
+            color: #ffffff;
+            background: rgba(0, 163, 224,0.8);
+            margin-left: -20px;
+            padding-left: 20px;
+        }
+        .title {
+            float: left;
+            width: 155px;
+            line-height: 2em;
+            white-space: nowrap;
+            cursor: pointer;
+            font-size: .813em;
+            font-weight: 500;
+        }
+        .summary {
+            display: block;
+            position: absolute;
+            width: auto;
+            overflow: hidden;
+            height: 2em;
+            margin-left:175px;;
+            margin-right: 120px;
+            line-height: 2em;
+            cursor: pointer;
+            font-size: .823em;
+            font-style: bold;
+        }
+        .summaryInRow {
+            width: 20%;
+            overflow-x: hidden;
+        }
+        .descriptionInRow {
+            color:#aaa;
+            overflow: hidden;
+            width: auto;
+            height: 2em;
+            margin-right: 120px;
+            line-height: 2em;
+            cursor: pointer;
+            font-size: .813em;
+        }
+        .learner-overall-progress {
+            text-align: center;
+            height: 2em;
+            line-height: 2em;
+            cursor: pointer;
+            font-size: .923em;
+            font-style: bold;
+        }
+        .learner-profile-picture {
+            border-radius: 50%;
+            width: 80px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto
+        }
+        .learner-profile-fullname {
+            text-align: center;
+            height: 2em;
+            line-height: 2em;
+            cursor: pointer;
+            font-size: .923em;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+        .learner-profile-role {
+            text-align: center;
+            height: 2em;
+            line-height: 2em;
+            cursor: pointer;
+            font-size: .823em;
+            font-style: italic;
+        }
+        /*Percentage styling*/
+        svg {
+            
+            display: block;
+            margin-left: auto;
+            margin-right: auto
+
+        }
+        .progress-meter .background {
+          fill: #ccc;
+        }
+
+        .progress-meter .foreground {
+          fill: #2EB398;
+        }
+
+        .progress-meter text {
+            height: 2em;
+            line-height: 2em;
+            cursor: pointer;
+            font-size: 1em;
+            font-style: bold;
+        }
